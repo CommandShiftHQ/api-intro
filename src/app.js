@@ -17,6 +17,13 @@ app.get('/colors', (req, res) => {
     res.status(200).json({ colors });
 });
 
+app.get('/fizzbuzz', (_, res) => {
+    res.status(200).json({
+        "message": "Thank you for your application to API Inc.\n\nOur automated fizzbuzz interview process will help us determine if you have what it takes.\n\nFor each question, you will GET the question and then give us the answer back to the same URL.\nYou will also find the URL for the next question in the nextQuestion parameter for each response.\n\nThe first question is at https://api-introduction/fizzbuzz/question/1.\n\nGood Luck\n",
+        "nextQuestion": "/fizzbuzz/question/1"
+      })
+})
+
 app.get('/fizzbuzz/question/:questionNumber', (req, res) => {
     const { nextQuestion, successMessage, ...question } = questions[req.params.questionNumber];
     res.status(200).json(question);

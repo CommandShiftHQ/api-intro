@@ -30,11 +30,14 @@ app.get('/fizzbuzz/question/:questionNumber', (req, res) => {
 })
 
 app.post('/fizzbuzz/question/:questionNumber', (req, res) => {
-    const { rules, numbers, successMessage, nextQuestion } = questions[req.params.questionNumber]
+    const { questionNumber } = req.params;
+    const { rules, numbers, successMessage, nextQuestion } = questions[questionNumber]
 
-    const answer = fizzBuzz(rules, numbers)
+    const answer = questionNumber === "1" ? null : fizzBuzz(rules, numbers)
     
-      if (answer === req.body.answer) {
+      if (questionNumber === "1") {
+        res.status(200).json({ result: 'correct', successMessage, nextQuestion })
+      } else if (answer === req.body.answer) {
           res.status(200).json({ result: 'correct', successMessage, nextQuestion })
       } else {
           res.status(400).json({ result: 'incorrect' });

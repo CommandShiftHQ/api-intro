@@ -8,10 +8,14 @@ app.get('/colors', (req, res) => {
     const colors = [];
 
     for (i = 0; i < count; i += 1) {
-        colors.push({ value: randomHex() })
+        colors.push({ value: randomHex() });
     }
 
-    res.status(200).json({ colors })
+    res.status(200).json({ colors });
 });
+
+app.get('*', (_, res) => {
+    res.status(200).json({ message: 'Instructions are at https://github.com/MCRcodes/api-intro' });
+})
 
 module.exports = app;

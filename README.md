@@ -8,7 +8,7 @@ The colour endpoint returns an array of random hex values.
 
 ### Getting a single hex value
 
-`GET https://api-introduction.herokuapp.com/colors`
+`GET https://api-intro.onrender.com/colors`
 
 ```
 {
@@ -20,7 +20,7 @@ The colour endpoint returns an array of random hex values.
 
 ### Get multiple hex values
 
-`GET https://api-introduction.herokuapp.com/colors?count=5`
+`GET https://api-intro.onrender.com/colors?count=5`
 
 ```json
 {
@@ -37,7 +37,7 @@ The colour endpoint returns an array of random hex values.
 After you have got the hang of getting random colors in postman, why not try it in the browser. You can make a request to the api in javascript like this: 
 
 ```js
-fetch('https://api-introduction.herokuapp.com/colors?count=5')
+fetch('https://api-intro.onrender.com/colors?count=5')
     .then(response => response.json())
     .then(data => {
         // Do something with your colors here
@@ -49,7 +49,7 @@ fetch('https://api-introduction.herokuapp.com/colors?count=5')
 
 ### get started with fizzbuzz
 
-`Get https://api-introduction.herokuapp.com/fizzbuzz`
+`Get https://api-intro.onrender.com/fizzbuzz`
 
 ```json
 {
@@ -60,7 +60,7 @@ fetch('https://api-introduction.herokuapp.com/colors?count=5')
 
 ### GET the first question
 
-`GET https://api-introduction.herokuapp.com`
+`GET https://api-intro.onrender.com/fizzbuzz/question/1`
 
 ```json
 {
@@ -100,7 +100,7 @@ fetch('https://api-introduction.herokuapp.com/colors?count=5')
 
 ### Answer the first question
 
-`POST https://api-introduction.herokuapp.com`
+`POST https://api-intro.onrender.com/fizzbuzz/question/1`
 
 ```json
 { "answer": "your answer here..." }
